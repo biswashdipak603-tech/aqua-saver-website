@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Aqua Saver</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>🌱 Aqua Saver Dashboard</h1>
+
+  <div class="card">
+    <p>Soil Moisture</p>
+    <h2 id="moisture">0%</h2>
+  </div>
+
+  <div class="card">
+    <p>Pump Status</p>
+    <h2 id="pump">OFF</h2>
+  </div>
+
+  <button onclick="togglePump()">Toggle Pump</button>
+<br><br>
+<button onclick="toggleMode()">Mode: <span id="mode">AUTO</span></button>
+
+  <script src="script.js"></script>
+</body>
+</html>
