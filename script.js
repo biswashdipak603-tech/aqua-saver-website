@@ -1,5 +1,5 @@
-const channelID = "YOUR_CHANNEL_ID";
-const readAPI = "YOUR_READ_API_KEY";
+const channelID = "3246249";
+const readAPI = "BD9FOOOBWVYGOKJI";
 
 function updateFromCloud() {
   fetch(`https://api.thingspeak.com/channels/${channelID}/feeds/last.json?api_key=${readAPI}`)
@@ -14,3 +14,4 @@ function updateFromCloud() {
 }
 
 setInterval(updateFromCloud, 20000);
+
