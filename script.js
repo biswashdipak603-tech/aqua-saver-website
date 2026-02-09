@@ -1,17 +1,27 @@
+// 🔁 ThingSpeak details
 const channelID = "3246249";
 const readAPI = "BD9FOOOBWVYGOKJI";
 
+// 🔄 Fetch data from ThingSpeak
 function updateFromCloud() {
-  fetch(`https://api.thingspeak.com/channels/${channelID}/feeds/last.json?api_key=${readAPI}`)
-    .then(res => res.json())
+  fetch(`https://api.thingspeak.com/channels/${3246249}/feeds/last.json?api_key=${BD9FOOOBWVYGOKJI}`)
+    .then(response => response.json())
     .then(data => {
-      document.getElementById("moisture").innerText =
-        data.field1 + "%";
+      // Moisture
+      const moisture = data.field1;
+      document.getElementById("moisture").innerText = moisture + "%";
 
-      document.getElementById("pump").innerText =
-        data.field2 == 1 ? "ON" : "OFF";
+      // Pump status
+      const pump = data.field2;
+      document.getElementById("pump").innerText = pump == 1 ? "ON" : "OFF";
+    })
+    .catch(error => {
+      console.log("Error fetching data:", error);
     });
 }
 
+// ⏱️ Update every 20 seconds
 setInterval(updateFromCloud, 20000);
 
+// Initial call
+updateFromCloud();
