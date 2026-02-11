@@ -19,7 +19,7 @@ function updateFromCloud() {
     .catch(err => console.log("Fetch error:", err));
 }
 
-setInterval(updateFromCloud, 20000);
+setInterval(updateFromCloud, 2000);
 updateFromCloud();
 
 const writeAPI = "IRDW9OJ518YH88GS";
@@ -31,5 +31,6 @@ function togglePumpManual() {
   fetch(`https://api.thingspeak.com/update?api_key=${writeAPI}&field3=${newValue}`);
   .then(() =>updateFromCloud(();
 }
+
 
 
