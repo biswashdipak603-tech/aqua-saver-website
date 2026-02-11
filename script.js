@@ -21,3 +21,14 @@ function updateFromCloud() {
 
 setInterval(updateFromCloud, 20000);
 updateFromCloud();
+
+const writeAPI = "IRDW9OJ518YH88GS";
+
+function togglePumpManual() {
+  let current = document.getElementById("pump").innerText;
+  let newValue = current === "ON" ? 0 : 1;
+
+  fetch(`https://api.thingspeak.com/update?api_key=${writeAPI}&field3=${newValue}`);
+}
+
+
