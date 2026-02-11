@@ -29,6 +29,7 @@ function togglePumpManual() {
   let newValue = current === "ON" ? 0 : 1;
 
   fetch(`https://api.thingspeak.com/update?api_key=${writeAPI}&field3=${newValue}`);
+  .then(() =>updateFromCloud(();
 }
 
 
